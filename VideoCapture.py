@@ -1,11 +1,12 @@
 import cv2
 import numpy as np
-from recognition import knn_training, recognize
+from recognition import recognize
+from crop import extract
 
-threshold = 32		# threshold for illuminance
+threshold = 12		# threshold for illuminance
 waittime = 1200		# waiting time before next detection
 
-knn = knn_training('training.png')
+knn = cv2.ml.KNearest_load('knn')
 
 gapcount = 0		# count to ensure input is done
 gapcutoff = 64
@@ -29,7 +30,7 @@ while(True):
 		if gapcount > gapcutoff: 
 			gapcount = 0
 			# start digit recognition
-			toRec = trackpad[0:240, 40:280]
+			toRec = extract(trackpad)
 			result = recognize(toRec, knn)
 
 			text = str(result)
@@ -58,7 +59,7 @@ while(True):
 		cv2.circle(frame, (cx, cy), 3, (0, 255, 0), -1)
 
 		if 0 < cx < 240 and 0 < cy < 320: 
-			cv2.circle(trackpad, (cx, cy), 6, (255, 255, 255), -1)
+			cv2.circle(trackpad, (cx, cy), 10, (255, 255, 255), -1)
 			trackpad_flip = cv2.flip(trackpad, 1)
 
 	# 顯示圖片
