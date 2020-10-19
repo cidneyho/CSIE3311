@@ -32,7 +32,7 @@ while(True):
 			# start digit recognition
 			toRec = extract(trackpad)
 			result = recognize(toRec, knn)
-
+			if result == -1: continue
 			text = str(result)
 			cv2.putText(trackpad_flip, text, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 1, cv2.LINE_AA)
 			cv2.imshow('trackpad', trackpad_flip)
