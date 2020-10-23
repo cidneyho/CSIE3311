@@ -1,1 +1,7 @@
 knn
+*.pyc
+*.png
+*.jpg
+*.mov
+*.mp3
+*.DS_Store
