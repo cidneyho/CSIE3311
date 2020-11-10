@@ -5,3 +5,4 @@ knn
 *.mov
 *.mp3
 *.DS_Store
+/temp

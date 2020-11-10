@@ -2,3 +2,4 @@
 
 + [Lab 1: FTIR-based Touch Pad](https://github.com/cidneyho/CSIE3311/tree/master/FTIR)
 + [Lab 2: Audio Interface](https://github.com/cidneyho/CSIE3311/tree/master/Audio)
++ [Lab 3: Wireless Motion Controller](https://github.com/cidneyho/CSIE3311/tree/master/Wireless)
